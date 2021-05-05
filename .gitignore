@@ -1,0 +1,14 @@
+# Ignore site settings files and files directories.
+/docroot/sites/*/settings*.php
+/docroot/sites/*/services*.yml
+/docroot/sites/*/files
+/docroot/sites/*/private
+
+# Ignore local based files and directories
+/.editorconfig
+/.gitattributes
+/docroot/sites/simpletest
+
+# Ignore sql dumps.
+*.sql
+*.sql.gz
