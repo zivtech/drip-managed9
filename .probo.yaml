@@ -6,7 +6,7 @@ steps:
     command: "composer install --working-dir=$SRC_DIR"
   - name: Probo site setup
     plugin: Drupal
-    drupalVersion: 8
+    drupalVersion: 9
     database: drupal9.sql.gz
     databaseGzipped: true
     clearCaches: false
@@ -16,8 +16,8 @@ steps:
     command: "drush --root=$SRC_DIR/docroot/ updb -y"
   #- name: Sanitize database
   #  command: "drush --root=$SRC_DIR/docroot/ sqlsan -y"
-  - name: Import config
-    command: "drush --root=$SRC_DIR/docroot/ cim --source=$SRC_DIR/config/default -y"
+  ##- name: Import config
+  ##  command: "drush --root=$SRC_DIR/docroot/ cim --source=$SRC_DIR/config/default -y"
   - name: Fix file permissions
     command: 'mkdir $SRC_DIR/docroot/sites/default/files/private && chown -R www-data:www-data $SRC_DIR/docroot/sites/default/files'
   #- name: Enable stage file proxy
