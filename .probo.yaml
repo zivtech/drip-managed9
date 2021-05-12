@@ -6,7 +6,7 @@ steps:
     command: rm -Rf /var/www/html
   - name: Probo site setup
     plugin: Drupal
-    drupalVersion: 9
+    drupalVersion: 8
     database: drupal9.sql.gz
     databaseGzipped: true
     clearCaches: false
