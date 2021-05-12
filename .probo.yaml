@@ -2,8 +2,8 @@ image: proboci/ubuntu:18.04-php7.3
 assets:
   - drupal9.sql.gz
 steps:
-  - name: Remove html dir.
-    command: rm -Rf /var/www/html
+  - name: Run composer install
+    command: "composer install --working-dir=$SRC_DIR"
   - name: Probo site setup
     plugin: Drupal
     drupalVersion: 8
@@ -12,8 +12,6 @@ steps:
     clearCaches: false
     databaseUpdates: false
     subDirectory: docroot
-  - name: Run composer install
-    command: "composer install --working-dir=$SRC_DIR"
   - name: Run database update
     command: "drush --root=$SRC_DIR/docroot/ updb -y"
   #- name: Sanitize database
