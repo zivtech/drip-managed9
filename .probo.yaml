@@ -2,6 +2,8 @@ image: proboci/ubuntu:18.04-php7.3
 assets:
   - drupal9.sql.gz
 steps:
+  - name: Remove html dir.
+    command: rm -Rf /var/www/html
   - name: Probo site setup
     plugin: Drupal
     drupalVersion: 9
