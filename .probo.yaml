@@ -12,8 +12,6 @@ steps:
     subDirectory: docroot
   - name: Run composer install
     command: "composer install --working-dir=$SRC_DIR"
-  - name: Use custom drush
-    command: 'mv /usr/local/bin/drush /usr/local/bin/drush8; ln -s /src/vendor/drush/drush/drush /usr/local/bin/drush; chmod +x /src/vendor/drush/drush/drush'
   - name: Run database update
     command: "drush --root=$SRC_DIR/docroot/ updb -y"
   #- name: Sanitize database
